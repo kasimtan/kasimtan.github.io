@@ -1,0 +1,74 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Reverse a singly linked list.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+  
+  public ListNode reverseList(ListNode head) {
+    if (head == null) return null;
+    ListNode ptr = head;
+    ListNode newHead = new ListNode(head.val);
+    while (ptr.next != null) {
+      ListNode next = new ListNode(ptr.next.val);
+      next.next = newHead;
+      newHead = next;
+      ptr = ptr.next;
+    }
+    return newHead;
+  }
+  
+  @Test
+  public void reverseList_ifNull_thenReturnsNull() {
+    Assert.assertNull(reverseList(null));
+  }
+  
+  @Test
+  public void reverseList_ifOneNode_thenReturnsOneNode() {
+    ListNode head = new ListNode(0);
+    ListNode reversed = reverseList(head);
+    Assert.assertEquals("0", reversed.toString());
+  }
+  
+  @Test
+  public void reverseList_ifTwoNode_thenReturnsReversed() {
+    ListNode head = new ListNode(0);
+    ListNode tail = new ListNode(1);
+    head.next = tail;
+    ListNode reversed = reverseList(head);
+    Assert.assertEquals("1,0", reversed.toString());
+  }
+  
+  @Test
+  public void reverseList_ifThreeNode_thenReturnsReversed() {
+    ListNode head = new ListNode(0);
+    ListNode mid = new ListNode(1);
+    ListNode tail = new ListNode(2);
+    head.next = mid;
+    mid.next = tail;
+    ListNode reversed = reverseList(head);
+    Assert.assertEquals("2,1,0", reversed.toString());
+  }
+}
+
+class ListNode {
+  int val;
+  ListNode next;
+  ListNode(int x) { val = x; }
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append(val);
+    while (next != null) {
+      sb.append(",").append(next.val);
+      next = next.next;
+    }
+    return sb.toString();
+  }
+}
