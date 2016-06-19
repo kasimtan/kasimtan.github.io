@@ -2,6 +2,8 @@
 
 ### Arithmetic
 * [Add Digits](https://leetcode.com/problems/add-digits/) `Easy` [[sol]](ADD_DIGITS.txt)
+* [Missing Number](https://leetcode.com/problems/missing-number/) `Medium` [[sol]](MISSING_NUMBER.txt)
+* [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
 
 ### Bit Manipulation
 * [Counting Bits](https://leetcode.com/problems/counting-bits/) `Medium` [[sol]](COUNTING_BITS.txt)
@@ -16,6 +18,9 @@
 
 ### Queue
 * [Move Zeroes](https://leetcode.com/problems/move-zeroes/) `Easy` [[sol]](MOVE_ZEROES.txt)
+
+### Recursion
+* [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) `Easy` [[sol]](MAXIMUM_DEPTH_OF_BINARY_TREE.txt)
 
 ### String Manipulation
 * [Reverse String](https://leetcode.com/problems/reverse-string/) `Easy` [[sol]](REVERSE_STRING.txt)

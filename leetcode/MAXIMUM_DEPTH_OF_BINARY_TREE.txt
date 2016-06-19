@@ -1,0 +1,57 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a binary tree, find its maximum depth.
+
+The maximum depth is the number of nodes along the longest path
+from the root node down to the farthest leaf node.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int maxDepth(TreeNode root) {
+    if (root == null) return 0;
+    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+  }
+
+  @Test
+  public void maxDepth_ifNullRoot_thenReturns0() {
+    Assert.assertEquals(0, maxDepth(null));
+  }
+
+  @Test
+  public void maxDepth_ifOneNodeTree_thenReturns1() {
+    Assert.assertEquals(1, maxDepth(new TreeNode(0)));
+  }
+
+  @Test
+  public void maxDepth_ifBalancedTree_thenReturnsCorrectAnswer() {
+    TreeNode root = new TreeNode(0);
+    root.left = new TreeNode(1);
+    root.right = new TreeNode(2);
+    Assert.assertEquals(2, maxDepth(root));
+  }
+
+  @Test
+  public void maxDepth_ifSkewedTree_thenReturnsCorrectAnswer() {
+    TreeNode root = new TreeNode(0);
+    root.left = new TreeNode(1);
+    root.left.left = new TreeNode(2);
+    root.left.right = new TreeNode(3);
+    root.left.right.left = new TreeNode(4);
+    Assert.assertEquals(4, maxDepth(root));
+  }
+}
+
+class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode(int x) { val = x; }
+}
