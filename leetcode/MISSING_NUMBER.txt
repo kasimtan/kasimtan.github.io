@@ -21,13 +21,12 @@ public class Solution {
   }
 
   public int missingNumber(int[] nums) {
-    int max = nums.length;
-    long expectedTotal = max * (max + 1) / 2;
-    long actualTotal = 0;
-    for (int num : nums) {
-      actualTotal += num;
+    int i = 0;
+    int xor = 0;
+    for (; i < nums.length; i++) {
+      xor = xor ^ nums[i] ^ i;
     }
-    return (int) (expectedTotal - actualTotal);
+    return xor ^ i;
   }
 
   @Test

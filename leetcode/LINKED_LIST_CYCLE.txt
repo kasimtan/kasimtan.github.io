@@ -16,17 +16,17 @@ public class Solution {
   }
 
   /*
-  Modify each visited node pointing to header.
-  If later we end up on a node pointing to header, then it has cycle.
-  Drawback: original linked list has changed
+  Using two different-speed pointers to scan the list.
+  If it has cycle, then eventually both pointers will meet at the same node.
   */
   public boolean hasCycle(ListNode head) {
-    ListNode ptr = head;
-    while (ptr != null) {
-      ListNode next = ptr.next;
-      ptr.next = head;
-      ptr = next;
-      if (ptr == head) return true;
+    ListNode slow = head;
+    ListNode fast = head;
+    while (slow != null) {
+    	if (fast == null || fast.next == null) return false;
+    	slow = slow.next;
+    	fast = fast.next.next;
+    	if (slow == fast) return true;
     }
     return false;
   }
