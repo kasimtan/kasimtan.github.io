@@ -1,0 +1,71 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given an array of integers, every element appears three times except for one.
+Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity.
+Could you implement it without using extra memory?
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  /*
+  Use additional two variables to record number of appearance.
+  If one time then 01, two times then 10, three times then reset to 00.
+  The single number is the one that either appears once or twice (i.e. 01 or 10)
+    a    b   num  ->  a    b
+  ----------------------------
+    0    0    0   ->  0    0
+    0    1    0   ->  0    1
+    1    0    0   ->  1    0
+    0    0    1   ->  0    1
+    0    1    1   ->  1    0
+    1    0    1   ->  0    0
+  */
+  public int singleNumber(int[] nums) {
+    int a = 0;
+    int b = 0;
+    for(int num : nums) {
+      int temp = (~a & b & num) | (a & ~b & ~num);
+      b = (~a & ~b & num) | (~a & b & ~num);
+      a = temp;
+    }
+    return a | b;
+  }
+
+  @Test
+  public void singleNumber_ifEmptyArray_thenReturnsZero() {
+    Assert.assertEquals(0, singleNumber(new int[0]));
+  }
+
+  @Test
+  public void singleNumber_ifOneElementArray_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(1, singleNumber(new int[] { 1 }));
+  }
+
+  @Test
+  public void singleNumber_ifFiveElementsArray_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(2, singleNumber(new int[] { 0, 2, 0, 0, 2 }));
+  }
+
+  @Test
+  public void singleNumber_ifNegativeValues_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(-2, singleNumber(new int[] { -1, -2, -1, -1 }));
+  }
+
+  @Test
+  public void singleNumber_ifMixedValues_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(-2, singleNumber(new int[] { Integer.MAX_VALUE, -2,
+        Integer.MIN_VALUE, 2, Integer.MIN_VALUE, 2, Integer.MAX_VALUE, 2,
+        Integer.MAX_VALUE, Integer.MIN_VALUE }));
+  }
+}

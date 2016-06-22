@@ -1,0 +1,85 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a linked list, determine if it has a cycle in it.
+
+Follow up:
+Can you solve it without using extra space?
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  /*
+  Modify each visited node pointing to header.
+  If later we end up on a node pointing to header, then it has cycle.
+  Drawback: original linked list has changed
+  */
+  public boolean hasCycle(ListNode head) {
+    ListNode ptr = head;
+    while (ptr != null) {
+      ListNode next = ptr.next;
+      ptr.next = head;
+      ptr = next;
+      if (ptr == head) return true;
+    }
+    return false;
+  }
+
+  @Test
+  public void hasCycle_ifNull_thenReturnsFalse() {
+    Assert.assertFalse(hasCycle(null));
+  }
+
+  @Test
+  public void hasCycle_ifOneNodeNoCycle_thenReturnsFalse() {
+    ListNode head = new ListNode(1);
+    Assert.assertFalse(hasCycle(head));
+  }
+
+  @Test
+  public void hasCycle_ifOneNodeHasCycle_thenReturnsTrue() {
+    ListNode head = new ListNode(1);
+    head.next = head;
+    Assert.assertTrue(hasCycle(head));
+  }
+
+  @Test
+  public void hasCycle_ifTwoNodesNoCycle_thenReturnsFalse() {
+    ListNode head = new ListNode(1);
+    ListNode tail = new ListNode(1);
+    head.next = tail;
+    Assert.assertFalse(hasCycle(head));
+  }
+
+  @Test
+  public void hasCycle_ifTwoNodesHaveCycle_thenReturnsTrue() {
+    ListNode head = new ListNode(1);
+    ListNode tail = new ListNode(1);
+    head.next = tail;
+    tail.next = head;
+    Assert.assertTrue(hasCycle(head));
+  }
+
+  @Test
+  public void hasCycle_ifThreeNodesHaveCycle_thenReturnsTrue() {
+    ListNode head = new ListNode(1);
+    ListNode mid = new ListNode(1);
+    ListNode tail = new ListNode(1);
+    head.next = mid;
+    mid.next = tail;
+    tail.next = mid;
+    Assert.assertTrue(hasCycle(head));
+  }
+}
+
+class ListNode {
+  int val;
+  ListNode next;
+  ListNode(int x) { val = x; }
+}

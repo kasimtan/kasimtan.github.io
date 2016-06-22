@@ -5,15 +5,18 @@
 * [Missing Number](https://leetcode.com/problems/missing-number/) `Medium` [[sol]](MISSING_NUMBER.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
 
-### Bit Manipulation
+### Bitwise Operation
 * [Counting Bits](https://leetcode.com/problems/counting-bits/) `Medium` [[sol]](COUNTING_BITS.txt)
 * [Single Number](https://leetcode.com/problems/single-number/) `Medium` [[sol]](SINGLE_NUMBER.txt)
+* [Single Number II](https://leetcode.com/problems/single-number-ii/) `Medium` [[sol]](SINGLE_NUMBER_II.txt)
 
 ### Hash Table
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECT_TWO_ARRAYS.txt)
+* [Single Number III](https://leetcode.com/problems/single-number-iii/) `Medium` [[sol]](SINGLE_NUMBER_III.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 
 ### Linked List
+* [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) `Easy` [[sol]](LINKED_LIST_CYCLE.txt)
 * [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST.txt)
 
 ### Queue

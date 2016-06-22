@@ -1,0 +1,77 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given an array of numbers nums, in which exactly two elements
+appear only once and all the other elements appear exactly twice.
+Find the two elements that appear only once.
+
+For example:
+
+Given nums = [1, 2, 1, 3, 2, 5], return [3, 5].
+
+Note:
+The order of the result is not important.
+So in the above example, [5, 3] is also correct.
+Your algorithm should run in linear runtime complexity.
+Could you implement it using only constant space complexity?
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int[] singleNumber(int[] nums) {
+    Map<Integer, String> map = new HashMap<Integer, String>();
+    for (int num : nums) {
+      if (map.get(num) == null) map.put(num, "");
+      else map.remove(num);
+    }
+    return mapToArray(map);
+  }
+
+  private int[] mapToArray(Map<Integer, String> map) {
+    if (map == null) return new int[0];
+    int size = map.size();
+    int[] result = new int[size];
+    Set<Integer> keys = map.keySet();
+    for (int key : keys) {
+      result[--size] = key;
+    }
+    return result;
+  }
+
+  @Test
+  public void singleNumber_ifEmptyArray_thenReturnsEmptyArray() {
+    int[] nums = new int[0];
+    Assert.assertEquals(0, singleNumber(nums).length);
+  }
+
+  @Test
+  public void singleNumber_ifNoSolution_thenReturnsEmptyArray() {
+    int[] nums = new int[] { 1, 1 };
+    Assert.assertEquals(0, singleNumber(nums).length);
+  }
+
+  @Test
+  public void singleNumber_ifExactSolution_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 0, 1 };
+    int[] result = singleNumber(nums);
+    Assert.assertEquals(2, result.length);
+    Assert.assertTrue(result[0] == 0 || result[0] == 1);
+    Assert.assertTrue(result[1] == 0 || result[1] == 1);
+  }
+
+  @Test
+  public void singleNumber_ifRandomNums_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { -1, 2, -1, Integer.MIN_VALUE, 2, Integer.MAX_VALUE };
+    int[] result = singleNumber(nums);
+    Assert.assertEquals(2, result.length);
+    Assert.assertTrue(result[0] == Integer.MIN_VALUE || result[0] == Integer.MAX_VALUE);
+    Assert.assertTrue(result[1] == Integer.MIN_VALUE || result[1] == Integer.MAX_VALUE);
+  }
+}
