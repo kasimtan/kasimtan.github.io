@@ -10,10 +10,10 @@
 * [Missing Number](https://leetcode.com/problems/missing-number/) `Medium` [[sol]](MISSING_NUMBER.txt)
 * [Single Number](https://leetcode.com/problems/single-number/) `Medium` [[sol]](SINGLE_NUMBER.txt)
 * [Single Number II](https://leetcode.com/problems/single-number-ii/) `Medium` [[sol]](SINGLE_NUMBER_II.txt)
+* [Single Number III](https://leetcode.com/problems/single-number-iii/) `Medium` [[sol]](SINGLE_NUMBER_III.txt)
 
 ### Hash Table
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECT_TWO_ARRAYS.txt)
-* [Single Number III](https://leetcode.com/problems/single-number-iii/) `Medium` [[sol]](SINGLE_NUMBER_III.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 
 ### Linked List

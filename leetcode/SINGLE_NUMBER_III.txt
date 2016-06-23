@@ -26,35 +26,36 @@ public class Solution {
   }
 
   public int[] singleNumber(int[] nums) {
-    Map<Integer, String> map = new HashMap<Integer, String>();
+    // extract the two single-number elements
+    int xor = 0;
     for (int num : nums) {
-      if (map.get(num) == null) map.put(num, "");
-      else map.remove(num);
+      xor ^= num;
     }
-    return mapToArray(map);
-  }
-
-  private int[] mapToArray(Map<Integer, String> map) {
-    if (map == null) return new int[0];
-    int size = map.size();
-    int[] result = new int[size];
-    Set<Integer> keys = map.keySet();
-    for (int key : keys) {
-      result[--size] = key;
+    // get the rightmost significant bit to separate the two numbers
+    int bit = xor & ~(xor - 1);
+    // use the bit to distinguish and find out the single numbers
+    int[] result = new int[2];
+    for (int num : nums) {
+      if ((num & bit) == 0) {
+        result[0] ^= num;
+      }
+      else {
+        result[1] ^= num;
+      }
     }
     return result;
   }
 
   @Test
-  public void singleNumber_ifEmptyArray_thenReturnsEmptyArray() {
+  public void singleNumber_ifEmptyArray_thenReturns00() {
     int[] nums = new int[0];
-    Assert.assertEquals(0, singleNumber(nums).length);
+    Assert.assertEquals("[0, 0]", Arrays.toString(singleNumber(nums)));
   }
 
   @Test
-  public void singleNumber_ifNoSolution_thenReturnsEmptyArray() {
+  public void singleNumber_ifNoSolution_thenReturns00() {
     int[] nums = new int[] { 1, 1 };
-    Assert.assertEquals(0, singleNumber(nums).length);
+    Assert.assertEquals("[0, 0]", Arrays.toString(singleNumber(nums)));
   }
 
   @Test

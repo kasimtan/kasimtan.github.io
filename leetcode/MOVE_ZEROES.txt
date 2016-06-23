@@ -20,8 +20,8 @@ public class Solution {
   public static void main(String[] args) {
     JUnitCore.main("Solution");
   }
-  
-  public int[] moveZeroes(int[] nums) {
+
+  public void moveZeroes(int[] nums) {
     Queue<Integer> queue = new ArrayDeque<Integer>();
     for (int i = 0; i < nums.length; i++) {
       if (nums[i] == 0) {
@@ -33,32 +33,32 @@ public class Solution {
         queue.add(i);
       }
     }
-    return nums;
   }
-  
+
   private void swapArray(int[] nums, int from, int to) {
     int temp = nums[from];
     nums[from] = nums[to];
     nums[to] = temp;
   }
-  
+
   @Test
   public void moveZeroes_ifEmptyArray_thenReturnsEmptyArray() {
-    int[] result = moveZeroes(new int[0]);
-    Assert.assertEquals("[]", Arrays.toString(result));
+    int[] nums = new int[0];
+    moveZeroes(nums);
+    Assert.assertEquals("[]", Arrays.toString(nums));
   }
-  
+
   @Test
   public void moveZeroes_ifOneElementArray_thenReturnsSameAsInput() {
-    int[] input = new int[] { 0 };
-    int[] result = moveZeroes(input);
-    Assert.assertEquals(Arrays.toString(input), Arrays.toString(result));
+    int[] nums = new int[] { 0 };
+    moveZeroes(nums);
+    Assert.assertEquals("[0]", Arrays.toString(nums));
   }
-  
+
   @Test
-  public void moveZeroes_ifMoreThanOneElementArray_thenReturnsMovedZeroesArray() {
-    int[] input = new int[] { 0, 0, 1, -10, 5, 0 };
-    int[] result = moveZeroes(input);
-    Assert.assertEquals("[1, -10, 5, 0, 0, 0]", Arrays.toString(result));
+  public void moveZeroes_ifRandomElementsArray_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 0, 0, 1, -10, 5, 0 };
+    moveZeroes(nums);
+    Assert.assertEquals("[1, -10, 5, 0, 0, 0]", Arrays.toString(nums));
   }
 }
