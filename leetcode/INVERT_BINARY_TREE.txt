@@ -1,0 +1,77 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Invert a binary tree.
+
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+
+to
+
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public TreeNode invertTree(TreeNode root) {
+    swapChild(root);
+    return root;
+  }
+
+  private void swapChild(TreeNode root) {
+    if (root == null) return;
+    TreeNode temp = root.right;
+    root.right = root.left;
+    root.left = temp;
+    swapChild(root.left);
+    swapChild(root.right);
+  }
+
+  @Test
+  public void invertTree_ifNull_thenReturnsNull() {
+    Assert.assertNull(invertTree(null));
+  }
+
+  @Test
+  public void invertTree_ifOneNode_thenReturnsOneNode() {
+    TreeNode root = new TreeNode(4);
+    TreeNode result = invertTree(root);
+    Assert.assertNull(result.left);
+    Assert.assertNull(result.right);
+    Assert.assertEquals("4 - -", result.toString());
+  }
+}
+
+class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode(int x) { val = x; }
+  public String toString() {
+    return toString(this, "");
+  }
+  public String toString(TreeNode current, String level) {
+    String leftString = "-";
+    String rightString = "-";
+
+    if (current.left != null)
+      leftString = toString(current.left, level);
+    if (current.right != null)
+      rightString = toString(current.right, level);
+
+    return current.val + " " + leftString + " " + rightString;
+  }
+}

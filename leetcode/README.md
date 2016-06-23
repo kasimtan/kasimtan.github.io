@@ -2,6 +2,7 @@
 
 ### Arithmetic
 * [Add Digits](https://leetcode.com/problems/add-digits/) `Easy` [[sol]](ADD_DIGITS.txt)
+* [Happy Number](https://leetcode.com/problems/happy-number/) `Easy` [[sol]](HAPPY_NUMBER.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
 
 ### Bitwise Operation
@@ -27,3 +28,6 @@
 
 ### String Manipulation
 * [Reverse String](https://leetcode.com/problems/reverse-string/) `Easy` [[sol]](REVERSE_STRING.txt)
+
+### Tree
+* [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
