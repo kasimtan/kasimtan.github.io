@@ -1,0 +1,109 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Write a program to find the node at which the intersection of two singly linked lists begins.
+
+For example, the following two linked lists:
+A:          a1 → a2
+                   ↘
+                     c1 → c2 → c3
+                   ↗
+B:     b1 → b2 → b3
+begin to intersect at node c1.
+
+Notes:
+
+If the two linked lists have no intersection at all, return null.
+The linked lists must retain their original structure after the function returns.
+You may assume there are no cycles anywhere in the entire linked structure.
+Your code should preferably run in O(n) time and use only O(1) memory.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+    if (headA == null || headB == null) return null;
+    int lenA = headA.length();
+    int lenB = headB.length();
+    /* shift pointer of the longer list to match
+      the same remaining length with the shorter one */
+    ListNode ptrA = headA;
+    while (lenA > lenB) {
+      ptrA = ptrA.next;
+      lenA -= 1;
+    }
+    ListNode ptrB = headB;
+    while (lenB > lenA) {
+      ptrB = ptrB.next;
+      lenB -= 1;
+    }
+    /* now both pointers are at the same remaining length
+      hence we could easily find the intersection start node */
+    while (ptrA != null && ptrB != null) {
+      if (ptrA == ptrB) return ptrA;
+      ptrA = ptrA.next;
+      ptrB = ptrB.next;
+    }
+    return null;
+  }
+
+  @Test
+  public void getIntersectionNode_ifNull_thenReturnsNull() {
+    ListNode headA = new ListNode(1);
+    ListNode headB = new ListNode(1);
+    Assert.assertNull(getIntersectionNode(null, null));
+    Assert.assertNull(getIntersectionNode(null, headB));
+    Assert.assertNull(getIntersectionNode(headA, null));
+  }
+
+  @Test
+  public void getIntersectionNode_ifNoIntersect_thenReturnsNull() {
+    ListNode headA = new ListNode(1);
+    headA.next = new ListNode(2);
+    ListNode headB = new ListNode(1);
+    headB.next = new ListNode(2);
+    Assert.assertNull(getIntersectionNode(headA, headB));
+  }
+
+  @Test
+  public void getIntersectionNode_ifIntersectSameLength_thenReturnsCorrectAnswer() {
+    ListNode headA = new ListNode(1);
+    ListNode headB = new ListNode(1);
+    ListNode headC = new ListNode(1);
+    headA.next = headC;
+    headB.next = headC;
+    Assert.assertEquals(headC, getIntersectionNode(headA, headB));
+  }
+
+  @Test
+  public void getIntersectionNode_ifIntersectDifferentLength_thenReturnsCorrectAnswer() {
+    ListNode headA = new ListNode(1);
+    ListNode headB = new ListNode(1);
+    ListNode headC = new ListNode(1);
+    headB.next = new ListNode(2);
+    headB.next.next = headC;
+    headA.next = headC;
+    Assert.assertEquals(headC, getIntersectionNode(headA, headB));
+  }
+}
+
+class ListNode {
+  int val;
+  ListNode next;
+  ListNode(int x) { val = x; }
+  public int length() {
+    int count = 0;
+    ListNode ptr = this;
+    while (ptr != null) {
+      count += 1;
+      ptr = ptr.next;
+    }
+    return count;
+  }
+}

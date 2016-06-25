@@ -1,0 +1,72 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given an array of n integers where n > 1, nums, return an array output
+such that output[i] is equal to the product of all the elements of nums
+except nums[i].
+
+Solve it without division and in O(n).
+
+For example, given [1,2,3,4], return [24,12,8,6].
+
+Follow up:
+Could you solve it with constant space complexity?
+(Note: The output array does not count as extra space for the purpose
+of space complexity analysis.)
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int[] productExceptSelf(int[] nums) {
+    int arrLen = nums.length;
+    int[] output = new int[arrLen];
+    for (int i = 0; i < arrLen; i++) {
+      output[i] = 1;
+    }
+    /* accumulate non-self product from left to right
+      i.e. [2,3,4] => [1,2,6] */
+    int temp = 1;
+    for (int i = 0; i < arrLen; i++) {
+      output[i] = temp;
+      temp *= nums[i];
+    }
+    /* accumulate non-self product from right to left
+      i.e. [2,3,4] => [12,4,1]
+      and at the same time multiply with previous pass result
+      i.e. [(1*12),(2*4),(6*1)] => [12,8,6] */
+    temp = 1;
+    for (int i = arrLen - 1; i >= 0; i--) {
+      output[i] *= temp;
+      temp *= nums[i];
+    }
+    return output;
+  }
+
+  @Test
+  public void productExceptSelf_ifTwins_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 2, 2 };
+    int[] result = productExceptSelf(nums);
+    Assert.assertEquals("[2, 2]", Arrays.toString(result));
+  }
+
+  @Test
+  public void productExceptSelf_ifExampleNumbers_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 1, 2, 3, 4 };
+    int[] result = productExceptSelf(nums);
+    Assert.assertEquals("[24, 12, 8, 6]", Arrays.toString(result));
+  }
+
+  @Test
+  public void productExceptSelf_ifMixedNumbers_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 9, 0 , -2 };
+    int[] result = productExceptSelf(nums);
+    Assert.assertEquals("[0, -18, 0]", Arrays.toString(result));
+  }
+}

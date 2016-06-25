@@ -4,6 +4,7 @@
 * [Add Digits](https://leetcode.com/problems/add-digits/) `Easy` [[sol]](ADD_DIGITS.txt)
 * [Happy Number](https://leetcode.com/problems/happy-number/) `Easy` [[sol]](HAPPY_NUMBER.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
+* [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) `Medium` [[sol]](PRODUCT_OF_ARRAY_EXCEPT_SELF.txt)
 
 ### Bitwise Operation
 * [Counting Bits](https://leetcode.com/problems/counting-bits/) `Medium` [[sol]](COUNTING_BITS.txt)
@@ -17,6 +18,8 @@
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 
 ### Linked List
+* [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) `Easy` [[sol]](DELETE_NODE_IN_A_LINKED_LIST.txt)
+* [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) `Easy` [[sol]](INTERSECTION_OF_TWO_LINKED_LISTS.txt)
 * [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) `Easy` [[sol]](LINKED_LIST_CYCLE.txt)
 * [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST.txt)
 
@@ -31,3 +34,4 @@
 
 ### Tree
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
+* [Same Tree](https://leetcode.com/problems/same-tree/) `Easy` [[sol]](SAME_TREE.txt)
