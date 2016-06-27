@@ -1,0 +1,64 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Say you have an array for which the ith element is
+the price of a given stock on day i.
+
+Design an algorithm to find the maximum profit.
+You may complete as many transactions as you like
+(i.e., buy one and sell one share of the stock multiple times).
+However, you may not engage in multiple transactions at the same time
+(i.e., you must sell the stock before you buy again).
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int maxProfit(int[] prices) {
+    int arrLen = prices.length;
+    int[] diff = new int[arrLen];
+    for (int i = 1; i < arrLen; i++) {
+      diff[i - 1] = prices[i] - prices[i - 1];
+    }
+    int maxProfit = 0;
+    for (int profit : diff) {
+      if (profit > 0) maxProfit += profit;
+    }
+    return maxProfit;
+  }
+
+  @Test
+  public void maxProfit_ifEmptyArray_thenReturns0() {
+    int[] prices = new int[0];
+    Assert.assertEquals(0, maxProfit(prices));
+  }
+
+  @Test
+  public void maxProfit_ifOneElementArray_thenReturns0() {
+    int[] prices = new int[] { 1 };
+    Assert.assertEquals(0, maxProfit(prices));
+  }
+
+  @Test
+  public void maxProfit_ifDescendingPrices_thenReturns0() {
+    int[] prices = new int[] { 7, 6, 4, 3, 1 };
+    Assert.assertEquals(0, maxProfit(prices));
+  }
+
+  @Test
+  public void maxProfit_ifAscendingPrices_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 1, 3, 4, 6, 7 };
+    Assert.assertEquals(6, maxProfit(prices));
+  }
+
+  @Test
+  public void maxProfit_ifRandomPrices_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 7, 1, 5, 3, 6, 8 };
+    Assert.assertEquals(9, maxProfit(prices));
+  }
+}

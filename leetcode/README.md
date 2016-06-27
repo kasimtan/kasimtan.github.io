@@ -13,8 +13,13 @@
 * [Single Number II](https://leetcode.com/problems/single-number-ii/) `Medium` [[sol]](SINGLE_NUMBER_II.txt)
 * [Single Number III](https://leetcode.com/problems/single-number-iii/) `Medium` [[sol]](SINGLE_NUMBER_III.txt)
 
+### Dynamic Programming
+* [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) `Easy` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK.txt)
+* [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_II.txt)
+
 ### Hash Table
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECT_TWO_ARRAYS.txt)
+* [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT-ELEMENTS.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 
 ### Linked List

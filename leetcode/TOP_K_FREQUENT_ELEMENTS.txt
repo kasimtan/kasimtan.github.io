@@ -1,0 +1,66 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a non-empty array of integers, return the k most frequent elements.
+
+For example,
+Given [1,1,1,2,2,3] and k = 2, return [1,2].
+
+Note:
+You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+Your algorithm's time complexity must be better than O(n log n),
+where n is the array's size.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public List<Integer> topKFrequent(int[] nums, int k) {
+    // store frequency of each num into hash table
+    Map<Integer, Integer> numFreqMap = new HashMap();
+    for (int num : nums) {
+      numFreqMap.put(num, numFreqMap.getOrDefault(num, 0) + 1);
+    }
+    // bucket sort the frequency
+    int arrLen = nums.length;
+    List<Integer>[] bucket = new ArrayList[arrLen + 1];
+    for (int num : numFreqMap.keySet()) {
+      int freq = numFreqMap.get(num);
+      if (bucket[freq] == null) bucket[freq] = new ArrayList();
+      bucket[freq].add(num);
+    }
+    // get top K from bucket high to low
+    List<Integer> topK = new ArrayList();
+    for (int i = arrLen; i > 0 && topK.size() < k; i--) {
+      if (bucket[i] != null) topK.addAll(bucket[i]);
+    }
+    return topK.subList(0, k);
+  }
+
+  @Test
+  public void topKFrequent_ifOneNumber_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 1 };
+    List<Integer> result = topKFrequent(nums, 1);
+    Assert.assertEquals("[1]", result.toString());
+  }
+
+  @Test
+  public void topKFrequent_ifExampleNumbers_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { 1, 1, 1, 2, 2, 3 };
+    List<Integer> result = topKFrequent(nums, 2);
+    Assert.assertEquals("[1, 2]", result.toString());
+  }
+
+  @Test
+  public void topKFrequent_ifMixedNumbers_thenReturnsCorrectAnswer() {
+    int[] nums = new int[] { Integer.MAX_VALUE, Integer.MIN_VALUE, 0, 0 };
+    List<Integer> result = topKFrequent(nums, 1);
+    Assert.assertEquals("[0]", result.toString());
+  }
+}
