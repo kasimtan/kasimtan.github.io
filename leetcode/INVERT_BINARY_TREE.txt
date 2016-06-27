@@ -27,17 +27,12 @@ public class Solution {
   }
 
   public TreeNode invertTree(TreeNode root) {
-    swapChild(root);
+    if (root == null) return null;
+    TreeNode left = invertTree(root.left);
+    TreeNode right = invertTree(root.right);
+    root.left = right;
+    root.right = left;
     return root;
-  }
-
-  private void swapChild(TreeNode root) {
-    if (root == null) return;
-    TreeNode temp = root.right;
-    root.right = root.left;
-    root.left = temp;
-    swapChild(root.left);
-    swapChild(root.right);
   }
 
   @Test

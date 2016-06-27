@@ -28,13 +28,10 @@ public class Solution {
 
   public int maxProfit(int[] prices) {
     int maxProfit = 0;
-    int maxAfterMin = 0;
     int minPrice = Integer.MAX_VALUE;
     for (int price : prices) {
-      maxAfterMin = Math.max(maxAfterMin, price);
-      if (price < minPrice) maxAfterMin = 0;
-      minPrice = Math.min(minPrice, price);
-      maxProfit = Math.max(maxProfit, maxAfterMin - minPrice);
+      if (price < minPrice) minPrice = price;
+      maxProfit = Math.max(maxProfit, price - minPrice);
     }
     return maxProfit;
   }
