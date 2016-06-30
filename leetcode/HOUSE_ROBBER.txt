@@ -1,0 +1,77 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+You are a professional robber planning to rob houses along a street.
+Each house has a certain amount of money stashed, the only constraint
+stopping you from robbing each of them is that adjacent houses have
+security system connected and it will automatically contact the police
+if two adjacent houses were broken into on the same night.
+
+Given a list of non-negative integers representing the amount of money
+of each house, determine the maximum amount of money you can rob tonight
+without alerting the police.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  /*
+  [10, 1, 1, 10, 1]
+  money[0]  = 10  // rob house 0
+  money[1]  = 10  // cannot rob house 1
+  money[2]  = 11  // rob house 2
+  money[3]  = 20  // ignore house 2, rob house 3 instead
+  money[4]  = 20  // cannot rob house 4
+  */
+  public int rob(int[] nums) {
+    int n = nums.length;
+    int[] money = new int[n];
+    for (int i = 0; i < n; i++) {
+      if (i == 0) money[i] = nums[i];
+      else if (i == 1) money[i] = Math.max(nums[i], nums[i-1]);
+      else money[i] = Math.max(money[i-1], nums[i] + money[i-2]);
+    }
+    return (n > 0) ? money[n-1] : 0;
+  }
+
+  @Test
+  public void maxProfit_ifEmptyArray_thenReturns0() {
+    int[] prices = new int[0];
+    Assert.assertEquals(0, rob(prices));
+  }
+
+  @Test
+  public void maxProfit_ifOneElementArray_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 1 };
+    Assert.assertEquals(1, rob(prices));
+  }
+
+  @Test
+  public void maxProfit_ifTwoElementsArray_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 1, 2 };
+    Assert.assertEquals(2, rob(prices));
+  }
+
+  @Test
+  public void maxProfit_ifThreeElementsArray_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 1, 2, 2 };
+    Assert.assertEquals(3, rob(prices));
+  }
+
+  @Test
+  public void maxProfit_ifSkipTwo_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 10, 1, 1, 10, 1 };
+    Assert.assertEquals(20, rob(prices));
+  }
+
+  @Test
+  public void maxProfit_ifRandomNumbers_thenReturnsCorrectAnswer() {
+    int[] prices = new int[] { 1, 7, 10, 8, 3 };
+    Assert.assertEquals(15, rob(prices));
+  }
+}

@@ -1,0 +1,65 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given two strings s and t, write a function to determine if t is an anagram of s.
+
+For example,
+s = "anagram", t = "nagaram", return true.
+s = "rat", t = "car", return false.
+
+Note:
+You may assume the string contains only lowercase alphabets.
+
+Follow up:
+What if the inputs contain unicode characters?
+How would you adapt your solution to such case?
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public boolean isAnagram(String s, String t) {
+    if (s == null || t == null) return false;
+    char[] sChars = s.toCharArray();
+    char[] tChars = t.toCharArray();
+    Arrays.sort(sChars);
+    Arrays.sort(tChars);
+    return Arrays.equals(sChars, tChars);
+  }
+
+  @Test
+  public void isAnagram_ifNullString_thenReturnsFalse() {
+    Assert.assertFalse(isAnagram(null, null));
+  }
+
+  @Test
+  public void isAnagram_ifBothEmptyStrings_thenReturnsTrue() {
+    Assert.assertTrue(isAnagram("", ""));
+  }
+
+  @Test
+  public void isAnagram_ifDifferentLengthStrings_thenReturnsFalse() {
+    Assert.assertFalse(isAnagram("aa", "aaa"));
+  }
+
+  @Test
+  public void isAnagram_ifNotAnagramStrings_thenReturnsFalse() {
+    Assert.assertFalse(isAnagram("rat", "car"));
+  }
+
+  @Test
+  public void isAnagram_ifAnagramStrings_thenReturnsTrue() {
+    Assert.assertTrue(isAnagram("anagram", "nagaram"));
+  }
+
+  @Test
+  public void isAnagram_ifUnicodeAnagram_thenReturnsTrue() {
+    Assert.assertTrue(isAnagram("你好", "好你"));
+  }
+}

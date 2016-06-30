@@ -16,6 +16,8 @@
 ### Dynamic Programming
 * [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) `Easy` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK.txt)
 * [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_II.txt)
+* [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_WITH_COOLDOWN.txt)
+* [House Robber](https://leetcode.com/problems/house-robber/) `Easy` [[sol]](HOUSE_ROBBER.txt)
 
 ### Hash Table
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECT_TWO_ARRAYS.txt)
@@ -36,6 +38,7 @@
 
 ### String Manipulation
 * [Reverse String](https://leetcode.com/problems/reverse-string/) `Easy` [[sol]](REVERSE_STRING.txt)
+* [Valid Anagram](https://leetcode.com/problems/valid-anagram/) `Easy` [[sol]](VALID_ANAGRAM.txt)
 
 ### Tree
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
