@@ -41,7 +41,7 @@ public class Solution {
   public int maxProfit(int[] prices) {
     int n = prices.length;
     int[] sell = new int[n];
-  	int[] maxProfit = new int[n];
+    int[] maxProfit = new int[n];
     for (int i = 1; i < prices.length; i++) {
       int diff = prices[i] - prices[i - 1];
       sell[i] = diff + Math.max(sell[i-1], (i > 3) ? maxProfit[i-3] : 0);
