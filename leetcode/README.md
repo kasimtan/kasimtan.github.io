@@ -17,6 +17,8 @@
 * [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) `Easy` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK.txt)
 * [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_II.txt)
 * [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_WITH_COOLDOWN.txt)
+* [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) `Easy` [[sol]](EXCEL_SHEET_COLUMN_NUMBER.txt)
+* [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) `Easy` [[sol]](EXCEL_SHEET_COLUMN_TITLE.txt)
 * [House Robber](https://leetcode.com/problems/house-robber/) `Easy` [[sol]](HOUSE_ROBBER.txt)
 
 ### Hash Table

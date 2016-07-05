@@ -1,0 +1,70 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a column title as appear in an Excel sheet,
+return its corresponding column number.
+
+For example:
+
+    A -> 1
+    B -> 2
+    C -> 3
+    ...
+    Z -> 26
+    AA -> 27
+    AB -> 28
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  /*
+  BCD -> 1434
+  s[0] = 'B' = 2
+  s[1] = 26 * s[0] + 'C' = 55
+  s[2] = 26 * s[1] + 'D' = 1434
+  */
+  public int titleToNumber(String s) {
+    if (s == null) return 0;
+    int number = 0;
+    for (int i = 0; i < s.length(); i++) {
+      number = number * 26 + (s.charAt(i) - 'A' + 1);
+    }
+    return number;
+  }
+
+  @Test
+  public void titleToNumber_ifNullString_thenReturns0() {
+    Assert.assertEquals(0, titleToNumber(null));
+  }
+
+  @Test
+  public void titleToNumber_ifEmptyString_thenReturns0() {
+    Assert.assertEquals(0, titleToNumber(""));
+  }
+
+  @Test
+  public void titleToNumber_ifZ_thenReturns26() {
+    Assert.assertEquals(26, titleToNumber("Z"));
+  }
+
+  @Test
+  public void titleToNumber_ifAZ_thenReturns52() {
+    Assert.assertEquals(52, titleToNumber("AZ"));
+  }
+
+  @Test
+  public void titleToNumber_ifZZ_thenReturns702() {
+    Assert.assertEquals(702, titleToNumber("ZZ"));
+  }
+
+  @Test
+  public void titleToNumber_ifZZZ_thenReturns18278() {
+    Assert.assertEquals(18278, titleToNumber("ZZZ"));
+  }
+}
