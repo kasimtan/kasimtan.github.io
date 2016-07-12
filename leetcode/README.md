@@ -25,7 +25,7 @@
 * [House Robber](https://leetcode.com/problems/house-robber/) `Easy` [[sol]](HOUSE_ROBBER.txt)
 
 ### Hash Table
-* [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECT_TWO_ARRAYS.txt)
+* [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS.txt)
 * [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
 * [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) `Medium` [[sol]](LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS.txt)
 * [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT-ELEMENTS.txt)
