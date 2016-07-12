@@ -1,0 +1,58 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a roman numeral, convert it to an integer.
+
+Input is guaranteed to be within the range from 1 to 3999.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  /*
+  M: 1000
+  D: 500
+  C: 100
+  L: 50
+  X: 10
+  V: 5
+  I: 1
+  */
+  public int romanToInt(String s) {
+    int[] arr = new int[26];
+    arr['I' - 'A'] = 1;
+    arr['V' - 'A'] = 5;
+    arr['X' - 'A'] = 10;
+    arr['L' - 'A'] = 50;
+    arr['C' - 'A'] = 100;
+    arr['D' - 'A'] = 500;
+    arr['M' - 'A'] = 1000;
+    int num = 0;
+    char prev = 'A';
+    for (char c : s.toCharArray()) {
+      int currentNum = arr[c - 'A'];
+      if (arr[prev - 'A'] < currentNum) {
+        num -= 2 * arr[prev - 'A'];
+      }
+      num += currentNum;
+      prev = c;
+    }
+    return num;
+  }
+
+  @Test
+  public void romanToInt_ifMDCLXVI_thenReturns1666() {
+    Assert.assertEquals(1666, romanToInt("MDCLXVI"));
+  }
+
+  @Test
+  public void romanToInt_ifMMMCMXCIX_thenReturns3999() {
+    Assert.assertEquals(3999, romanToInt("MMMCMXCIX"));
+  }
+}

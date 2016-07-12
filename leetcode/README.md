@@ -5,9 +5,11 @@
 * [Happy Number](https://leetcode.com/problems/happy-number/) `Easy` [[sol]](HAPPY_NUMBER.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
 * [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) `Medium` [[sol]](PRODUCT_OF_ARRAY_EXCEPT_SELF.txt)
+* [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) `Easy` [[sol]](ROMAN_TO_INTEGER.txt)
 
 ### Bitwise Operation
 * [Counting Bits](https://leetcode.com/problems/counting-bits/) `Medium` [[sol]](COUNTING_BITS.txt)
+* [Majority Element](https://leetcode.com/problems/majority-element/) `Easy` [[sol]](MAJORITY_ELEMENT.txt)
 * [Missing Number](https://leetcode.com/problems/missing-number/) `Medium` [[sol]](MISSING_NUMBER.txt)
 * [Single Number](https://leetcode.com/problems/single-number/) `Medium` [[sol]](SINGLE_NUMBER.txt)
 * [Single Number II](https://leetcode.com/problems/single-number-ii/) `Medium` [[sol]](SINGLE_NUMBER_II.txt)
@@ -17,12 +19,15 @@
 * [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) `Easy` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK.txt)
 * [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_II.txt)
 * [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/) `Medium` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK_WITH_COOLDOWN.txt)
+* [Count Numbers with Unique Digits](https://leetcode.com/problems/count-numbers-with-unique-digits/) `Medium` [[sol]](COUNT_NUMBERS_WITH_UNIQUE_DIGITS.txt)
 * [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) `Easy` [[sol]](EXCEL_SHEET_COLUMN_NUMBER.txt)
 * [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) `Easy` [[sol]](EXCEL_SHEET_COLUMN_TITLE.txt)
 * [House Robber](https://leetcode.com/problems/house-robber/) `Easy` [[sol]](HOUSE_ROBBER.txt)
 
 ### Hash Table
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECT_TWO_ARRAYS.txt)
+* [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
+* [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) `Medium` [[sol]](LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS.txt)
 * [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT-ELEMENTS.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 

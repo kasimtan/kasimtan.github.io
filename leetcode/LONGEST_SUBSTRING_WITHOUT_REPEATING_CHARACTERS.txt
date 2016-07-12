@@ -1,0 +1,79 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a string, find the length of the longest substring without
+repeating characters.
+
+Examples:
+
+Given "abcabcbb", the answer is "abc", which the length is 3.
+
+Given "bbbbb", the answer is "b", with the length of 1.
+
+Given "pwwkew", the answer is "wke", with the length of 3.
+Note that the answer must be a substring,
+"pwke" is a subsequence and not a substring.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int findLargestSubstring(String s) {
+    if (s == null) return 0;
+    int max = 0;
+    Map<Character, Integer> map = new HashMap<Character, Integer>();
+    for (int right = 0, left = 0; right < s.length(); right++) {
+      char currentChar = s.charAt(right);
+      if (map.get(currentChar) == null) {
+        int len = right + 1 - left;
+        if (len > max) max = len;
+        map.put(currentChar, right);
+      }
+      else {
+        char leftChar;
+        while ((leftChar = s.charAt(left)) != currentChar) {
+          map.remove(leftChar);
+          left += 1;
+        }
+        left += 1;
+      }
+    }
+    return max;
+  }
+
+  @Test
+  public void findLargestSubstring_ifNull_thenReturns0() {
+    Assert.assertEquals(0, findLargestSubstring(null));
+  }
+
+  @Test
+  public void findLargestSubstring_ifEmptyString_thenReturns0() {
+    Assert.assertEquals(0, findLargestSubstring(""));
+  }
+
+  @Test
+  public void findLargestSubstring_ifABC_thenReturns3() {
+    Assert.assertEquals(3, findLargestSubstring("ABC"));
+  }
+
+  @Test
+  public void findLargestSubstring_ifBBB_thenReturns1() {
+    Assert.assertEquals(1, findLargestSubstring("BBB"));
+  }
+
+  @Test
+  public void findLargestSubstring_ifABCABCDBB_thenReturns3() {
+    Assert.assertEquals(4, findLargestSubstring("ABCABCDBB"));
+  }
+
+  @Test
+  public void findLargestSubstring_ifABAC_thenReturns3() {
+    Assert.assertEquals(3, findLargestSubstring("ABAC"));
+  }
+}

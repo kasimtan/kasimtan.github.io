@@ -1,0 +1,46 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given an array of size n, find the majority element.
+The majority element is the element that appears more than ⌊ n/2 ⌋ times.
+
+You may assume that the array is non-empty and the majority element
+always exist in the array.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int majorityElement(int[] nums) {
+    int majority = nums[0];
+    int count = 0;
+    for (int num : nums) {
+      if (count == 0) {
+        count++;
+        majority = num;
+      }
+      else if (majority == num) {
+        count++;
+      }
+      else {
+        count--;
+      }
+    }
+    return majority;
+  }
+
+  @Test
+  public void majorityElement_ifMoreGreaterNumber_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(2, majorityElement(new int[] {2, 2, 2, 1, 1}));
+  }
+
+  @Test
+  public void majorityElement_ifMoreSmallerNumber_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(1, majorityElement(new int[] {2, 2, 1, 1, 1}));
+  }
+}
