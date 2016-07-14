@@ -22,20 +22,15 @@ public class Solution {
   }
 
   public void moveZeroes(int[] nums) {
-    Queue<Integer> queue = new ArrayDeque<Integer>();
-    for (int i = 0; i < nums.length; i++) {
-      if (nums[i] == 0) {
-        queue.add(i);
-      }
-      else if (!queue.isEmpty()) {
-        int swapIndex = queue.remove();
-        swapArray(nums, i, swapIndex);
-        queue.add(i);
+    for (int zeroPos = 0, currPos = 0; currPos < nums.length; currPos++) {
+      if (nums[currPos] != 0) {
+        swap(nums, currPos, zeroPos);
+        zeroPos += 1;
       }
     }
   }
 
-  private void swapArray(int[] nums, int from, int to) {
+  private void swap(int[] nums, int from, int to) {
     int temp = nums[from];
     nums[from] = nums[to];
     nums[to] = temp;
@@ -50,9 +45,9 @@ public class Solution {
 
   @Test
   public void moveZeroes_ifOneElementArray_thenReturnsSameAsInput() {
-    int[] nums = new int[] { 0 };
+    int[] nums = new int[] { 1 };
     moveZeroes(nums);
-    Assert.assertEquals("[0]", Arrays.toString(nums));
+    Assert.assertEquals("[1]", Arrays.toString(nums));
   }
 
   @Test

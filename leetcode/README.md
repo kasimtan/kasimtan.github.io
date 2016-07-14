@@ -28,18 +28,18 @@
 ### Hash Table
 * [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) `Easy` [[sol]](CONTAINS_DUPLICATE.txt)
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS.txt)
-* [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
-* [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) `Medium` [[sol]](LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS.txt)
 * [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT-ELEMENTS.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 
 ### Linked List
 * [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) `Easy` [[sol]](DELETE_NODE_IN_A_LINKED_LIST.txt)
 * [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) `Easy` [[sol]](INTERSECTION_OF_TWO_LINKED_LISTS.txt)
-* [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) `Easy` [[sol]](LINKED_LIST_CYCLE.txt)
 * [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST.txt)
 
-### Queue
+### Two Pointers
+* [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
+* [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) `Easy` [[sol]](LINKED_LIST_CYCLE.txt)
+* [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) `Medium` [[sol]](LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS.txt)
 * [Move Zeroes](https://leetcode.com/problems/move-zeroes/) `Easy` [[sol]](MOVE_ZEROES.txt)
 
 ### Recursion
