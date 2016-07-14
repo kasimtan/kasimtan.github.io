@@ -1,0 +1,35 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given an array of integers, find if the array contains any duplicates.
+Your function should return true if any value appears at least twice in the array,
+and it should return false if every element is distinct.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public boolean containsDuplicate(int[] nums) {
+    Set<Integer> set = new HashSet<>();
+    for (int num : nums) {
+      if (!set.add(num)) return true;
+    }
+    return false;
+  }
+
+  @Test
+  public void containsDuplicate_ifNoDuplicate_thenReturnsFalse() {
+    Assert.assertFalse(containsDuplicate(new int[] { 4, 3, 1, 2 }));
+  }
+
+  @Test
+  public void containsDuplicate_ifDuplicate_thenReturnsTrue() {
+    Assert.assertTrue(containsDuplicate(new int[] { 4, 1, 2, 1, 2 }));
+  }
+}

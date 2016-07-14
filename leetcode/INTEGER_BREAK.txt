@@ -1,0 +1,71 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a positive integer n, break it into the sum of at least two positive integers and
+maximize the product of those integers. Return the maximum product you can get.
+
+For example, given n = 2, return 1 (2 = 1 + 1); given n = 10, return 36 (10 = 3 + 3 + 4).
+
+Note: You may assume that n is not less than 2 and not larger than 58.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  /*
+  int[] prod = new int[] { 0, 1, 1, 2, 4, 6, 9, 12, 18, 27 };
+  n = 2 -> 1
+  n = 3 -> 2
+  n = 4 -> 4
+  n = 5 -> 3 * (5 - 3) = 6
+  n = 6 -> 3 * 3 = 9
+  n = 7 -> 3 * (7 - 3) = 12
+  n = 8 -> 3 * 3 * (5 - 3) = 18
+  n = 9 -> 3 * 3 * (6 - 3) = 27
+  n = 10 -> 3 * 3 * (7 - 3) = 36
+  */
+  public int integerBreak(int n) {
+    if (n == 2 || n == 3) return n - 1;
+    int maxProduct = 1;
+    while (n > 4) {
+      maxProduct *= 3;
+      n -= 3;
+    }
+    return maxProduct * n;
+  }
+
+  @Test
+  public void integerBreak_if2_thenReturns1() {
+    Assert.assertEquals(1, integerBreak(2));
+  }
+
+  @Test
+  public void integerBreak_if8_thenReturns18() {
+    Assert.assertEquals(18, integerBreak(8));
+  }
+
+  @Test
+  public void integerBreak_if10_thenReturns36() {
+    Assert.assertEquals(36, integerBreak(10));
+  }
+
+  @Test
+  public void integerBreak_if25_thenReturns8748() {
+    Assert.assertEquals(8748, integerBreak(25));
+  }
+
+  @Test
+  public void integerBreak_if40_thenReturns2125764() {
+    Assert.assertEquals(2125764, integerBreak(40));
+  }
+
+  @Test
+  public void integerBreak_if58_thenReturns1549681956() {
+    Assert.assertEquals(1549681956, integerBreak(58));
+  }
+}

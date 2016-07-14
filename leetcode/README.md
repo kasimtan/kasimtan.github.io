@@ -3,6 +3,7 @@
 ### Arithmetic
 * [Add Digits](https://leetcode.com/problems/add-digits/) `Easy` [[sol]](ADD_DIGITS.txt)
 * [Happy Number](https://leetcode.com/problems/happy-number/) `Easy` [[sol]](HAPPY_NUMBER.txt)
+* [Integer Break](https://leetcode.com/problems/integer-break/) `Medium` [[sol]](INTEGER_BREAK.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
 * [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) `Medium` [[sol]](PRODUCT_OF_ARRAY_EXCEPT_SELF.txt)
 * [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) `Easy` [[sol]](ROMAN_TO_INTEGER.txt)
@@ -25,6 +26,7 @@
 * [House Robber](https://leetcode.com/problems/house-robber/) `Easy` [[sol]](HOUSE_ROBBER.txt)
 
 ### Hash Table
+* [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) `Easy` [[sol]](CONTAINS_DUPLICATE.txt)
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS.txt)
 * [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
 * [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) `Medium` [[sol]](LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS.txt)
@@ -44,6 +46,7 @@
 * [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) `Easy` [[sol]](MAXIMUM_DEPTH_OF_BINARY_TREE.txt)
 
 ### String Manipulation
+* [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) `Easy` [[sol]](LONGEST_COMMON_PREFIX.txt)
 * [Reverse String](https://leetcode.com/problems/reverse-string/) `Easy` [[sol]](REVERSE_STRING.txt)
 * [Valid Anagram](https://leetcode.com/problems/valid-anagram/) `Easy` [[sol]](VALID_ANAGRAM.txt)
 

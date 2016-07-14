@@ -1,0 +1,64 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Write a function to find the longest common prefix string amongst an array of strings.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public String longestCommonPrefix(String[] strs) {
+    if (strs == null || strs.length == 0) return "";
+    String commonPrefix = "";
+    for (int i = 0; i < strs[0].length(); i++) {
+      char c = strs[0].charAt(i);
+      for (int j = 1; j < strs.length; j++) {
+        if (strs[j].length() == i || strs[j].charAt(i) != c) {
+          return commonPrefix;
+        }
+      }
+      commonPrefix += c;
+    }
+    return commonPrefix;
+  }
+
+  @Test
+  public void longestCommonPrefix_ifNullArray_thenReturnsNull() {
+    Assert.assertNull(longestCommonPrefix(null));
+  }
+
+  @Test
+  public void longestCommonPrefix_ifNoCommon_thenReturnsEmptyString() {
+    Assert.assertEquals("", longestCommonPrefix(new String[] { "zyx", "xyz" }));
+  }
+
+  @Test
+  public void longestCommonPrefix_ifEmptyStrings_thenReturnsEmptyString() {
+    Assert.assertEquals("", longestCommonPrefix(new String[] { "", "" }));
+  }
+
+  @Test
+  public void longestCommonPrefix_ifOneElement_thenReturnsItSelf() {
+    Assert.assertEquals("z", longestCommonPrefix(new String[] { "z" }));
+  }
+
+  @Test
+  public void longestCommonPrefix_ifOneCharacterCommon_thenReturnsCorrectAnswer() {
+    Assert.assertEquals("z", longestCommonPrefix(new String[] { "zyx", "zxy" } ));
+  }
+
+  @Test
+  public void longestCommonPrefix_ifAllCharactersCommon_thenReturnsCorrectAnswer() {
+    Assert.assertEquals("zyx", longestCommonPrefix(new String[] { "zyx", "zyx" } ));
+  }
+
+  @Test
+  public void longestCommonPrefix_ifDifferentLength_thenReturnsCorrectAnswer() {
+    Assert.assertEquals("zyx", longestCommonPrefix(new String[] { "zyxy", "zyx" } ));
+  }
+}
