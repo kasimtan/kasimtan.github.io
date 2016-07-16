@@ -51,5 +51,6 @@
 * [Valid Anagram](https://leetcode.com/problems/valid-anagram/) `Easy` [[sol]](VALID_ANAGRAM.txt)
 
 ### Tree
+* [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol]](BINARY_TREE_INORDER_TRAVERSAL.txt)
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
 * [Same Tree](https://leetcode.com/problems/same-tree/) `Easy` [[sol]](SAME_TREE.txt)
