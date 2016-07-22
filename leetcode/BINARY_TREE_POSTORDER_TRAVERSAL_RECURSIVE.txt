@@ -1,0 +1,73 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a binary tree, return the postorder traversal of its nodes' values.
+
+For example:
+Given binary tree {1,#,2,3},
+   1
+    \
+     2
+    /
+   3
+return [3,2,1].
+
+Note: Recursive solution is trivial, could you do it iteratively?
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public List<Integer> postorderTraversal(TreeNode root) {
+    List<Integer> list = new ArrayList<>();
+    visitNode(list, root);
+    return list;
+  }
+
+  private void visitNode(List<Integer> list, TreeNode node) {
+    if (node == null) return;
+    visitNode(list, node.left);
+    visitNode(list, node.right);
+    list.add(node.val);
+  }
+
+  @Test
+  public void postorderTraversal_ifNull_thenReturnsEmptyList() {
+    Assert.assertEquals(Arrays.asList(), postorderTraversal(null));
+  }
+
+  @Test
+  public void postorderTraversal_ifOneNodeTree_thenReturnsOneElement() {
+    Assert.assertEquals(Arrays.asList(0), postorderTraversal(new TreeNode(0)));
+  }
+
+  @Test
+  public void postorderTraversal_ifBalancedTree_thenReturnsCorrectTraversal() {
+    TreeNode root = new TreeNode(1);
+    root.left = new TreeNode(2);
+    root.right = new TreeNode(3);
+    Assert.assertEquals(Arrays.asList(2, 3, 1), postorderTraversal(root));
+  }
+
+  @Test
+  public void postorderTraversal_ifSkewedTree_thenReturnsCorrectTraversal() {
+    TreeNode root = new TreeNode(1);
+    root.left = new TreeNode(2);
+    root.left.right = new TreeNode(3);
+    root.left.right.left = new TreeNode(4);
+    Assert.assertEquals(Arrays.asList(4, 3, 2, 1), postorderTraversal(root));
+  }
+}
+
+class TreeNode {
+   int val;
+   TreeNode left;
+   TreeNode right;
+   TreeNode(int x) { val = x; }
+}

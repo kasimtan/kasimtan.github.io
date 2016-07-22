@@ -2,6 +2,7 @@
 
 ### Arithmetic
 * [Add Digits](https://leetcode.com/problems/add-digits/) `Easy` [[sol]](ADD_DIGITS.txt)
+* [Bulb Switcher](https://leetcode.com/problems/bulb-switcher/) `Medium` [[sol]](BULB_SWITCHER.txt)
 * [Happy Number](https://leetcode.com/problems/happy-number/) `Easy` [[sol]](HAPPY_NUMBER.txt)
 * [Integer Break](https://leetcode.com/problems/integer-break/) `Medium` [[sol]](INTEGER_BREAK.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
@@ -28,7 +29,7 @@
 ### Hash Table
 * [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) `Easy` [[sol]](CONTAINS_DUPLICATE.txt)
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS.txt)
-* [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT-ELEMENTS.txt)
+* [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT_ELEMENTS.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
 
 ### Linked List
@@ -51,6 +52,8 @@
 * [Valid Anagram](https://leetcode.com/problems/valid-anagram/) `Easy` [[sol]](VALID_ANAGRAM.txt)
 
 ### Tree
-* [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol]](BINARY_TREE_INORDER_TRAVERSAL.txt)
+* [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol1]](BINARY_TREE_INORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_INORDER_TRAVERSAL_RECURSIVE.txt)
+* [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol1]](BINARY_TREE_PREORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_PREORDER_TRAVERSAL_RECURSIVE.txt)
+* [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) `Hard` [[sol1]](BINARY_TREE_POSTORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_POSTORDER_TRAVERSAL_RECURSIVE.txt)
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
 * [Same Tree](https://leetcode.com/problems/same-tree/) `Easy` [[sol]](SAME_TREE.txt)
