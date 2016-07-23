@@ -1,0 +1,86 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a string array words, find the maximum value of length(word[i]) * length(word[j])
+where the two words do not share common letters. You may assume that each word will
+contain only lower case letters. If no such two words exist, return 0.
+
+Example 1:
+Given ["abcw", "baz", "foo", "bar", "xtfn", "abcdef"]
+Return 16
+The two words can be "abcw", "xtfn".
+
+Example 2:
+Given ["a", "ab", "abc", "d", "cd", "bcd", "abcd"]
+Return 4
+The two words can be "ab", "cd".
+
+Example 3:
+Given ["a", "aa", "aaa", "aaaa"]
+Return 0
+No such pair of words.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int maxProduct(String[] words) {
+    if (words == null || words.length < 2) return 0;
+    /*
+    abcd -> 00000000000000000000000000001111
+    efgh -> 00000000000000000000000011110000
+    aaabbccd -> 00000000000000000000000000001111
+    */
+    int[] bits = new int[words.length];
+    for (int i = 0; i < words.length; i++) {
+      for (char c : words[i].toCharArray()) {
+        bits[i] |= 1 << (c - 'a');
+      }
+    }
+    int maxProduct = 0;
+    for (int i = 0; i < words.length - 1; i++) {
+      for (int j = i + 1; j < words.length; j++) {
+        int product = words[i].length() * words[j].length();
+        if ((bits[i] & bits[j]) == 0 && product > maxProduct) {
+          maxProduct = product;
+        }
+      }
+    }
+    return maxProduct;
+  }
+
+  @Test
+  public void maxProduct_ifNullWord_thenReturns0() {
+    Assert.assertEquals(0, maxProduct(null));
+  }
+
+  @Test
+  public void maxProduct_ifEmptyWord_thenReturns0() {
+    Assert.assertEquals(0, maxProduct(new String[0]));
+  }
+
+  @Test
+  public void maxProduct_if1Word_thenReturns0() {
+    Assert.assertEquals(0, maxProduct(new String[] { "abc" }));
+  }
+
+  @Test
+  public void maxProduct_ifAllWordsShareCommonLetter_thenReturns0() {
+    Assert.assertEquals(0, maxProduct(new String[] { "a", "aa", "aaa", "aaaa" }));
+  }
+
+  @Test
+  public void maxProduct_ifMostWordsHaveCommonLetter_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(4, maxProduct(new String[] { "a", "ab", "abc", "d", "cd", "bcd", "abcd" }));
+  }
+
+  @Test
+  public void maxProduct_ifShorterWordsProduceMaxProduct_thenReturnsCorrectAnswer() {
+    Assert.assertEquals(16, maxProduct(new String[] { "abcw", "baz", "foo", "bar", "xtfn", "abcdef" }));
+  }
+}

@@ -1,0 +1,85 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a binary search tree, write a function kthSmallest to find
+the kth smallest element in it.
+
+Note:
+You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
+
+Follow up:
+What if the BST is modified (insert/delete operations) often and
+you need to find the kth smallest frequently?
+How would you optimize the kthSmallest routine?
+
+Hint:
+- Try to utilize the property of a BST.
+- What if you could modify the BST node's structure?
+- The optimal runtime complexity is O(height of BST).
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int kthSmallest(TreeNode root, int k) {
+    int smallerCount = countNodes(root.left);
+    if (k <= smallerCount) {
+      return kthSmallest(root.left, k);
+    }
+    else if (k > smallerCount + 1) {
+      return kthSmallest(root.right, k - smallerCount - 1);
+    }
+    return root.val;
+  }
+
+  private int countNodes(TreeNode root) {
+    if (root == null) return 0;
+    return 1 + countNodes(root.left) + countNodes(root.right);
+  }
+
+  @Test
+  public void kthSmallest_ifOneNode_thenReturnsCorrectAnswer() {
+    TreeNode root = new TreeNode(1);
+    Assert.assertEquals(1, kthSmallest(root, 1));
+  }
+
+  @Test
+  public void kthSmallest_ifAnswerOnRoot_thenReturnsCorrectAnswer() {
+    TreeNode root = new TreeNode(4);
+    root.left = new TreeNode(2);
+    root.left.left = new TreeNode(1);
+    root.left.right = new TreeNode(3);
+    Assert.assertEquals(4, kthSmallest(root, 4));
+  }
+
+  @Test
+  public void kthSmallest_ifAnswerOnLeftTree_thenReturnsCorrectAnswer() {
+    TreeNode root = new TreeNode(4);
+    root.left = new TreeNode(2);
+    root.left.left = new TreeNode(1);
+    root.left.right = new TreeNode(3);
+    Assert.assertEquals(3, kthSmallest(root, 3));
+  }
+
+  @Test
+  public void kthSmallest_ifAnswerOnRightTree_thenReturnsCorrectAnswer() {
+    TreeNode root = new TreeNode(2);
+    root.left = new TreeNode(1);
+    root.right = new TreeNode(4);
+    root.right.left = new TreeNode(3);
+    root.right.right = new TreeNode(5);
+    Assert.assertEquals(5, kthSmallest(root, 5));
+  }
+}
+
+class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode(int x) { val = x; }
+}

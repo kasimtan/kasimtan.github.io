@@ -1,0 +1,143 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Determine if a Sudoku is valid, according to: Sudoku Puzzles - The Rules.
+
+The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+
+5 3 . . 7 . . . .
+6 . . 1 9 5 . . .
+. 9 8 . . . . 6 .
+8 . . . 6 . . . 3
+4 . . 8 . 3 . . 1
+7 . . . 2 . . . 6
+. 6 . . . . 2 8 .
+. . . 4 1 9 . . 5
+. . . . 8 . . 7 9
+A partially filled sudoku which is valid.
+
+Note:
+A valid Sudoku board (partially filled) is not necessarily solvable.
+Only the filled cells need to be validated.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  private final int BOARDSIZE = 9;
+  private final int BLOCKSIZE = (int)Math.sqrt(BOARDSIZE);
+
+  public boolean isValidSudoku(char[][] board) {
+    return isValidBoard(board) && isValidRows(board) &&
+      isValidColumns(board) && isValidBlocks(board);
+  }
+
+  private boolean isValidBoard(char[][] board) {
+    if (board == null || board.length != BOARDSIZE) return false;
+    for (char[] row : board) {
+      if (row.length != BOARDSIZE) return false;
+      for (char c : row) {
+        if (c != '.' && (c < '1' && c > (char)BOARDSIZE)) return false;
+      }
+    }
+    return true;
+  }
+
+  private boolean isValidRows(char[][] board) {
+    for (int row = 0; row < BOARDSIZE; row++) {
+      boolean[] checker = new boolean[BOARDSIZE];
+      for (int col = 0; col < BOARDSIZE; col++) {
+        char c = board[row][col];
+        if (c == '.') continue;
+        if (checker[c - '1']) return false;
+        checker[c - '1'] = true;
+      }
+    }
+    return true;
+  }
+
+  private boolean isValidColumns(char[][] board) {
+    for (int col = 0; col < BOARDSIZE; col++) {
+      boolean[] checker = new boolean[BOARDSIZE];
+      for (int row = 0; row < BOARDSIZE; row++) {
+        char c = board[row][col];
+        if (c == '.') continue;
+        if (checker[c - '1']) return false;
+        checker[c - '1'] = true;
+      }
+    }
+    return true;
+  }
+
+  /*
+   - - - - - - - - -
+  |  0  |  3  |  6  |
+   - - - - - - - - -
+  |  1  |  4  |  7  |
+   - - - - - - - - -
+  |  2  |  5  |  8  |
+   - - - - - - - - -
+  */
+  private boolean isValidBlocks(char[][] board) {
+    for (int block = 0; block < BOARDSIZE; block++) {
+      int x = block % BLOCKSIZE;
+      int y = block / BLOCKSIZE;
+      boolean[] checker = new boolean[BOARDSIZE];
+      for (int row = x * BLOCKSIZE; row < x * BLOCKSIZE + BLOCKSIZE; row++) {
+        for (int col = y * BLOCKSIZE; col < y * BLOCKSIZE + BLOCKSIZE; col++) {
+          char c = board[row][col];
+          if (c == '.') continue;
+          if (checker[c - '1']) return false;
+          checker[c - '1'] = true;
+        }
+      }
+    }
+    return true;
+  }
+
+  @Test
+  public void isValidSudoku_ifValidBoard_thenReturnsTrue() {
+    char[][] board = new char[BOARDSIZE][BOARDSIZE];
+    board[0] = "53..7....".toCharArray();
+    board[1] = "6..195...".toCharArray();
+    board[2] = ".98....6.".toCharArray();
+    board[3] = "8...6...3".toCharArray();
+    board[4] = "4..8.3..1".toCharArray();
+    board[5] = "7...2...6".toCharArray();
+    board[6] = ".6....28.".toCharArray();
+    board[7] = "...419..5".toCharArray();
+    board[8] = "....8..79".toCharArray();
+    Assert.assertTrue(isValidSudoku(board));
+  }
+
+  @Test
+  public void isValidSudoku_ifInvalidBoard_thenReturnsFalse() {
+    char[][] board = new char[BOARDSIZE][BOARDSIZE];
+    board[0] = "....5..1.".toCharArray();
+    board[1] = ".4.3.....".toCharArray();
+    board[2] = ".....3..1".toCharArray();
+    board[3] = "8......2.".toCharArray();
+    board[4] = "..2.7....".toCharArray();
+    board[5] = ".15......".toCharArray();
+    board[6] = ".....2...".toCharArray();
+    board[7] = ".2.9.....".toCharArray();
+    board[8] = "..4......".toCharArray();
+    Assert.assertFalse(isValidSudoku(board));
+  }
+
+  @Test
+  public void isValidSudoku_ifEmptyBoard_thenReturns0() {
+    Assert.assertFalse(isValidSudoku(new char[BOARDSIZE][0]));
+  }
+
+  @Test
+  public void isValidSudoku_ifNullBoard_thenReturns0() {
+    Assert.assertFalse(isValidSudoku(null));
+  }
+}

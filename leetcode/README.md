@@ -12,6 +12,7 @@
 ### Bitwise Operation
 * [Counting Bits](https://leetcode.com/problems/counting-bits/) `Medium` [[sol]](COUNTING_BITS.txt)
 * [Majority Element](https://leetcode.com/problems/majority-element/) `Easy` [[sol]](MAJORITY_ELEMENT.txt)
+* [Maximum Product of Word Lengths](https://leetcode.com/problems/maximum-product-of-word-lengths/) `Medium` [[sol]](MAXIMUM_PRODUCT_OF_WORD_LENGTHS.txt)
 * [Missing Number](https://leetcode.com/problems/missing-number/) `Medium` [[sol]](MISSING_NUMBER.txt)
 * [Single Number](https://leetcode.com/problems/single-number/) `Medium` [[sol]](SINGLE_NUMBER.txt)
 * [Single Number II](https://leetcode.com/problems/single-number-ii/) `Medium` [[sol]](SINGLE_NUMBER_II.txt)
@@ -31,10 +32,12 @@
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS.txt)
 * [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT_ELEMENTS.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
+* [Valid Sudoku](https://leetcode.com/problems/valid-sudoku/) `Easy` [[sol]](VALID_SUDOKU.txt)
 
 ### Linked List
 * [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) `Easy` [[sol]](DELETE_NODE_IN_A_LINKED_LIST.txt)
 * [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) `Easy` [[sol]](INTERSECTION_OF_TWO_LINKED_LISTS.txt)
+* [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) `Medium` [[sol]](ODD_EVEN_LINKED_LIST.txt)
 * [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol1]](REVERSE_LINKED_LIST.txt) [[sol2]](REVERSE_LINKED_LIST_RECURSIVE.txt)
 
 ### Two Pointers
@@ -56,4 +59,5 @@
 * [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol1]](BINARY_TREE_PREORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_PREORDER_TRAVERSAL_RECURSIVE.txt)
 * [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) `Hard` [[sol1]](BINARY_TREE_POSTORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_POSTORDER_TRAVERSAL_RECURSIVE.txt)
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
+* [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) `Medium` [[sol]](KTH_SMALLEST_ELEMENT_IN_A_BST.txt)
 * [Same Tree](https://leetcode.com/problems/same-tree/) `Easy` [[sol]](SAME_TREE.txt)
