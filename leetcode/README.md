@@ -35,7 +35,7 @@
 ### Linked List
 * [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) `Easy` [[sol]](DELETE_NODE_IN_A_LINKED_LIST.txt)
 * [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) `Easy` [[sol]](INTERSECTION_OF_TWO_LINKED_LISTS.txt)
-* [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST.txt)
+* [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol1]](REVERSE_LINKED_LIST.txt) [[sol2]](REVERSE_LINKED_LIST_RECURSIVE.txt)
 
 ### Two Pointers
 * [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
