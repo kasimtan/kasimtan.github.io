@@ -26,6 +26,8 @@
 * [Excel Sheet Column Number](https://leetcode.com/problems/excel-sheet-column-number/) `Easy` [[sol]](EXCEL_SHEET_COLUMN_NUMBER.txt)
 * [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/) `Easy` [[sol]](EXCEL_SHEET_COLUMN_TITLE.txt)
 * [House Robber](https://leetcode.com/problems/house-robber/) `Easy` [[sol]](HOUSE_ROBBER.txt)
+* [House Robber II](https://leetcode.com/problems/house-robber-ii/) `Medium` [[sol]](HOUSE_ROBBER_II.txt)
+* [House Robber III](https://leetcode.com/problems/house-robber-iii/) `Medium` [[sol]](HOUSE_ROBBER_III.txt)
 
 ### Hash Table
 * [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) `Easy` [[sol]](CONTAINS_DUPLICATE.txt)
