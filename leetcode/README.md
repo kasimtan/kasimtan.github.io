@@ -40,7 +40,7 @@
 * [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/) `Easy` [[sol]](DELETE_NODE_IN_A_LINKED_LIST.txt)
 * [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) `Easy` [[sol]](INTERSECTION_OF_TWO_LINKED_LISTS.txt)
 * [Odd Even Linked List](https://leetcode.com/problems/odd-even-linked-list/) `Medium` [[sol]](ODD_EVEN_LINKED_LIST.txt)
-* [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol1]](REVERSE_LINKED_LIST.txt) [[sol2]](REVERSE_LINKED_LIST_RECURSIVE.txt)
+* [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST.txt)
 
 ### Two Pointers
 * [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
@@ -49,7 +49,11 @@
 * [Move Zeroes](https://leetcode.com/problems/move-zeroes/) `Easy` [[sol]](MOVE_ZEROES.txt)
 
 ### Recursion
+* [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol]](BINARY_TREE_INORDER_TRAVERSAL_RECURSIVE.txt)
+* [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) `Hard` [[sol]](BINARY_TREE_POSTORDER_TRAVERSAL_RECURSIVE.txt)
+* [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol]](BINARY_TREE_PREORDER_TRAVERSAL_RECURSIVE.txt)
 * [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) `Easy` [[sol]](MAXIMUM_DEPTH_OF_BINARY_TREE.txt)
+* [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST_RECURSIVE.txt)
 
 ### String Manipulation
 * [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) `Easy` [[sol]](LONGEST_COMMON_PREFIX.txt)
@@ -57,9 +61,9 @@
 * [Valid Anagram](https://leetcode.com/problems/valid-anagram/) `Easy` [[sol]](VALID_ANAGRAM.txt)
 
 ### Tree
-* [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol1]](BINARY_TREE_INORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_INORDER_TRAVERSAL_RECURSIVE.txt)
-* [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol1]](BINARY_TREE_PREORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_PREORDER_TRAVERSAL_RECURSIVE.txt)
-* [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) `Hard` [[sol1]](BINARY_TREE_POSTORDER_TRAVERSAL.txt) [[sol2]](BINARY_TREE_POSTORDER_TRAVERSAL_RECURSIVE.txt)
+* [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol]](BINARY_TREE_INORDER_TRAVERSAL.txt)
+* [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) `Hard` [[sol]](BINARY_TREE_POSTORDER_TRAVERSAL.txt)
+* [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol]](BINARY_TREE_PREORDER_TRAVERSAL.txt)
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
 * [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) `Medium` [[sol]](KTH_SMALLEST_ELEMENT_IN_A_BST.txt)
 * [Same Tree](https://leetcode.com/problems/same-tree/) `Easy` [[sol]](SAME_TREE.txt)
