@@ -64,6 +64,7 @@
 * [Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) `Medium` [[sol]](BINARY_TREE_INORDER_TRAVERSAL.txt)
 * [Binary Tree Postorder Traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/) `Hard` [[sol]](BINARY_TREE_POSTORDER_TRAVERSAL.txt)
 * [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol]](BINARY_TREE_PREORDER_TRAVERSAL.txt)
+* [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) `Medium` [[sol]](IMPLEMENT_TRIE_%28PREFIX_TREE%29.txt)
 * [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) `Easy` [[sol]](INVERT_BINARY_TREE.txt)
 * [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) `Medium` [[sol]](KTH_SMALLEST_ELEMENT_IN_A_BST.txt)
 * [Same Tree](https://leetcode.com/problems/same-tree/) `Easy` [[sol]](SAME_TREE.txt)

@@ -1,0 +1,115 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Implement a trie with insert, search, and startsWith methods.
+
+Note:
+You may assume that all inputs are consist of lowercase letters a-z.
+
+Your Trie object will be instantiated and called as such:
+Trie trie = new Trie();
+trie.insert("somestring");
+trie.search("key");
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  @Test
+  public void search_ifNotFound_thenReturnsFalse() {
+    Trie trie = new Trie();
+    trie.insert("somestring");
+    Assert.assertFalse(trie.search("key"));
+  }
+
+  @Test
+  public void search_ifFound_thenReturnsTrue() {
+    Trie trie = new Trie();
+    trie.insert("somestring");
+    Assert.assertTrue(trie.search("somestring"));
+  }
+
+  @Test
+  public void startsWith_ifNotFound_thenReturnsFalse() {
+    Trie trie = new Trie();
+    trie.insert("somestring");
+    Assert.assertFalse(trie.startsWith("key"));
+  }
+
+  @Test
+  public void startsWith_ifFound_thenReturnsTrue() {
+    Trie trie = new Trie();
+    trie.insert("somestring");
+    Assert.assertTrue(trie.startsWith("some"));
+  }
+}
+
+class TrieNode {
+  private Map<Character, TrieNode> next;
+  private boolean isLeaf;
+
+  public TrieNode() {
+    next = new HashMap<>();
+    isLeaf = false;
+  }
+
+  public void put(Character c, TrieNode node) {
+    next.put(c, node);
+  }
+
+  public TrieNode get(Character c) {
+    return next.get(c);
+  }
+
+  public void setLeaf() {
+    isLeaf = true;
+  }
+
+  public boolean isLeaf() {
+    return isLeaf;
+  }
+}
+
+class Trie {
+  private TrieNode root;
+
+  public Trie() {
+    root = new TrieNode();
+  }
+
+  public void insert(String word) {
+    TrieNode node = root;
+    for (char c : word.toCharArray()) {
+      if (node.get(c) == null) {
+        node.put(c, new TrieNode());
+      }
+      node = node.get(c);
+    }
+    node.setLeaf();
+  }
+
+  public boolean search(String word) {
+    TrieNode node = searchPrefix(word);
+    return (node != null && node.isLeaf());
+  }
+
+  public boolean startsWith(String prefix) {
+    TrieNode node = searchPrefix(prefix);
+    return (node != null);
+  }
+
+  private TrieNode searchPrefix(String word) {
+    TrieNode node = root;
+    for (char c : word.toCharArray()) {
+      if (node.get(c) == null) return null;
+      node = node.get(c);
+    }
+    return node;
+  }
+}
