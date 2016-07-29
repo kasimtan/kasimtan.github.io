@@ -1,4 +1,3 @@
-import java.util.*;
 import org.junit.*;
 import org.junit.runner.*;
 
@@ -51,29 +50,9 @@ public class Solution {
 }
 
 class TrieNode {
-  private Map<Character, TrieNode> next;
-  private boolean isLeaf;
-
-  public TrieNode() {
-    next = new HashMap<>();
-    isLeaf = false;
-  }
-
-  public void put(Character c, TrieNode node) {
-    next.put(c, node);
-  }
-
-  public TrieNode get(Character c) {
-    return next.get(c);
-  }
-
-  public void setLeaf() {
-    isLeaf = true;
-  }
-
-  public boolean isLeaf() {
-    return isLeaf;
-  }
+  TrieNode[] next = new TrieNode[26];
+  boolean isLeaf;
+  public TrieNode() { }
 }
 
 class Trie {
@@ -86,17 +65,17 @@ class Trie {
   public void insert(String word) {
     TrieNode node = root;
     for (char c : word.toCharArray()) {
-      if (node.get(c) == null) {
-        node.put(c, new TrieNode());
+      if (node.next[c - 'a'] == null) {
+        node.next[c - 'a'] = new TrieNode();
       }
-      node = node.get(c);
+      node = node.next[c - 'a'];
     }
-    node.setLeaf();
+    node.isLeaf = true;
   }
 
   public boolean search(String word) {
     TrieNode node = searchPrefix(word);
-    return (node != null && node.isLeaf());
+    return (node != null && node.isLeaf);
   }
 
   public boolean startsWith(String prefix) {
@@ -107,8 +86,8 @@ class Trie {
   private TrieNode searchPrefix(String word) {
     TrieNode node = root;
     for (char c : word.toCharArray()) {
-      if (node.get(c) == null) return null;
-      node = node.get(c);
+      if (node.next[c - 'a'] == null) return null;
+      node = node.next[c - 'a'];
     }
     return node;
   }
