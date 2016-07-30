@@ -43,6 +43,7 @@
 * [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST.txt)
 
 ### Two Pointers
+* [Find the Duplicate Number](https://leetcode.com/problems/find-the-duplicate-number/) `Hard` [[sol]](FIND_THE_DUPLICATE_NUMBER.txt)
 * [Intersection of Two Arrays II](https://leetcode.com/problems/intersection-of-two-arrays-ii/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS_II.txt)
 * [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) `Easy` [[sol]](LINKED_LIST_CYCLE.txt)
 * [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) `Medium` [[sol]](LONGEST_SUBSTRING_WITHOUT_REPEATING_CHARACTERS.txt)
