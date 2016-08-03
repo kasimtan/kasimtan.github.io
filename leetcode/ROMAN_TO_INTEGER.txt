@@ -47,6 +47,11 @@ public class Solution {
   }
 
   @Test
+  public void romanToInt_ifXCIX_thenReturns99() {
+    Assert.assertEquals(99, romanToInt("XCIX"));
+  }
+
+  @Test
   public void romanToInt_ifMDCLXVI_thenReturns1666() {
     Assert.assertEquals(1666, romanToInt("MDCLXVI"));
   }

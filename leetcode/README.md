@@ -5,6 +5,7 @@
 * [Bulb Switcher](https://leetcode.com/problems/bulb-switcher/) `Medium` [[sol]](BULB_SWITCHER.txt)
 * [Happy Number](https://leetcode.com/problems/happy-number/) `Easy` [[sol]](HAPPY_NUMBER.txt)
 * [Integer Break](https://leetcode.com/problems/integer-break/) `Medium` [[sol]](INTEGER_BREAK.txt)
+* [Integer to Roman](https://leetcode.com/problems/integer-to-roman/) `Medium` [[sol]](INTEGER_TO_ROMAN.txt)
 * [Nim Game](https://leetcode.com/problems/nim-game/) `Easy` [[sol]](NIM_GAME.txt)
 * [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) `Medium` [[sol]](PRODUCT_OF_ARRAY_EXCEPT_SELF.txt)
 * [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) `Easy` [[sol]](ROMAN_TO_INTEGER.txt)
