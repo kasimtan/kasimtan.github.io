@@ -9,6 +9,9 @@
 * [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) `Medium` [[sol]](PRODUCT_OF_ARRAY_EXCEPT_SELF.txt)
 * [Roman to Integer](https://leetcode.com/problems/roman-to-integer/) `Easy` [[sol]](ROMAN_TO_INTEGER.txt)
 
+### Binary Search
+* [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/) `Easy` [[sol]](GUESS_NUMBER_HIGHER_OR_LOWER.txt)
+
 ### Bitwise Operation
 * [Counting Bits](https://leetcode.com/problems/counting-bits/) `Medium` [[sol]](COUNTING_BITS.txt)
 * [Majority Element](https://leetcode.com/problems/majority-element/) `Easy` [[sol]](MAJORITY_ELEMENT.txt)

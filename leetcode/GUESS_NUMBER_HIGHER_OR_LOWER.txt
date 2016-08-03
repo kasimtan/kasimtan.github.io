@@ -1,0 +1,74 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given an integer, convert it to a roman numeral.
+
+Input is guaranteed to be within the range from 1 to 3999.
+
+*/
+
+public class Solution extends GuessGame {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public void setSecret(int num) {
+    storeSecret(num);
+  }
+
+  public int guessNumber(int n) {
+    int low = 1;
+    int high = n;
+    while(true) {
+      int mid = low + (high - low) / 2;
+      int result = guess(mid);
+      if (result == 0) {
+        return mid;
+      }
+      else if (result < 0) {
+        high = mid - 1;
+      }
+      else {
+        low = mid + 1;
+      }
+    }
+  }
+
+  @Test
+  public void guessNumber_ifNis1_thenReturns1() {
+    setSecret(1);
+    Assert.assertEquals(1, guessNumber(1));
+  }
+
+  @Test
+  public void guessNumber_ifNis2Pick2_thenReturns2() {
+    setSecret(2);
+    Assert.assertEquals(2, guessNumber(2));
+  }
+
+  @Test
+  public void guessNumber_ifNis1000Pick1_thenReturns1() {
+    setSecret(1);
+    Assert.assertEquals(1, guessNumber(1000));
+  }
+
+  @Test
+  public void guessNumber_ifNisIntegerMaxPickIntegerMax_thenReturnsIntegerMax() {
+    setSecret(Integer.MAX_VALUE);
+    Assert.assertEquals(Integer.MAX_VALUE, guessNumber(Integer.MAX_VALUE));
+  }
+}
+
+class GuessGame {
+  private int secret = 0;
+  public void storeSecret(int num) {
+    this.secret = num;
+  }
+  public int guess(int num) {
+    if (num == this.secret) return 0;
+    else if (num < this.secret) return 1;
+    return -1;
+  }
+}
