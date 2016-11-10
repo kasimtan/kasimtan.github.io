@@ -1,0 +1,89 @@
+import java.util.*;
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Given a string, find the first non-repeating character in it and return it's index.
+If it doesn't exist, return -1.
+
+Examples:
+
+s = "leetcode"
+return 0.
+
+s = "loveleetcode",
+return 2.
+
+Note: You may assume the string contain only lowercase letters.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int firstUniqChar(String s) {
+    Map<Character, Integer> map = findUniqChar(s);
+    return getFirstUniqCharIndex(map);
+  }
+
+  private Map<Character, Integer> findUniqChar(String s) {
+    if (s == null) return null;
+    Map<Character, Integer> uniqMap = new HashMap<>();
+    Map<Character, Integer> nonUniqMap = new HashMap<>();
+    for (int i = 0; i < s.length(); i++) {
+      char c = s.charAt(i);
+      if (!uniqMap.containsKey(c) && !nonUniqMap.containsKey(c)) {
+        uniqMap.put(c, i);
+      }
+      else {
+        uniqMap.remove(c);
+        nonUniqMap.put(c, i);
+      }
+    }
+    return uniqMap;
+  }
+
+  private int getFirstUniqCharIndex(Map<Character, Integer> map) {
+    if (map == null || map.isEmpty()) return -1;
+    int index = Integer.MAX_VALUE;
+    Iterator<Character> iter = map.keySet().iterator();
+    while (iter.hasNext()) {
+      int i = map.get(iter.next());
+      if (i < index) index = i;
+    }
+    return index;
+  }
+
+  @Test
+  public void firstUniqChar_ifNullInput_thenReturnsNegative1() {
+    Assert.assertEquals(-1, firstUniqChar(null));
+  }
+
+  @Test
+  public void firstUniqChar_ifEmptyString_thenReturnsNegative1() {
+    Assert.assertEquals(-1, firstUniqChar(""));
+  }
+
+  @Test
+  public void firstUniqChar_ifNoUniqueChar_thenReturnsNegative1() {
+    Assert.assertEquals(-1, firstUniqChar("abcccba"));
+  }
+
+  @Test
+  public void firstUniqChar_ifAllUnique_thenReturns0() {
+    Assert.assertEquals(0, firstUniqChar("abc"));
+  }
+
+  @Test
+  public void firstUniqChar_ifSomeUnique_thenReturnsFirstUniqueCharIndex() {
+    Assert.assertEquals(0, firstUniqChar("leetcode"));
+  }
+
+  @Test
+  public void firstUniqChar_ifUniqueCharInMiddleString_thenReturnsCorrectIndex() {
+    Assert.assertEquals(2, firstUniqChar("loveleetcode"));
+  }
+}

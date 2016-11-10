@@ -21,6 +21,7 @@
 * [Single Number](https://leetcode.com/problems/single-number/) `Medium` [[sol]](SINGLE_NUMBER.txt)
 * [Single Number II](https://leetcode.com/problems/single-number-ii/) `Medium` [[sol]](SINGLE_NUMBER_II.txt)
 * [Single Number III](https://leetcode.com/problems/single-number-iii/) `Medium` [[sol]](SINGLE_NUMBER_III.txt)
+* [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) `Easy` [[sol]](SUM_OF_TWO_INTEGERS.txt)
 
 ### Dynamic Programming
 * [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) `Easy` [[sol]](BEST_TIME_TO_BUY_AND_SELL_STOCK.txt)
@@ -35,6 +36,8 @@
 
 ### Hash Table
 * [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) `Easy` [[sol]](CONTAINS_DUPLICATE.txt)
+* [Find the Difference](https://leetcode.com/problems/find-the-difference/) `Easy` [[sol]](FIND_THE_DIFFERENCE.txt)
+* [Find Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/) `Easy` [[sol]](FIND_UNIQUE_CHAR_IN_A_STRING.txt)
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/) `Easy` [[sol]](INTERSECTION_OF_TWO_ARRAYS.txt)
 * [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) `Medium` [[sol]](TOP_K_FREQUENT_ELEMENTS.txt)
 * [Two Sum](https://leetcode.com/problems/two-sum/) `Easy` [[sol]](TWO_SUM.txt)
@@ -59,6 +62,7 @@
 * [Binary Tree Preorder Traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/) `Medium` [[sol]](BINARY_TREE_PREORDER_TRAVERSAL_RECURSIVE.txt)
 * [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) `Easy` [[sol]](MAXIMUM_DEPTH_OF_BINARY_TREE.txt)
 * [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) `Easy` [[sol]](REVERSE_LINKED_LIST_RECURSIVE.txt)
+* [Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/) `Easy` [[sol]](SUM_OF_LEFT_LEAVES.txt)
 
 ### String Manipulation
 * [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) `Easy` [[sol]](LONGEST_COMMON_PREFIX.txt)

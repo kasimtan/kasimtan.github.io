@@ -1,0 +1,97 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Find the sum of all left leaves in a given binary tree.
+
+Example:
+
+    3
+   / \
+  9  20
+    /  \
+   15   7
+
+There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int sumOfLeftLeaves(TreeNode root) {
+    if (root == null) return 0;
+    if (root.left != null && root.left.left == null && root.left.right == null)
+      return root.left.val + sumOfLeftLeaves(root.right);
+    return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifNullRoot_thenReturns0() {
+    TreeNode root = null;
+    Assert.assertEquals(0, sumOfLeftLeaves(root));
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifOnlyRoot_thenReturns0() {
+    TreeNode root = new TreeNode(3);
+    Assert.assertEquals(0, sumOfLeftLeaves(root));
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifNoLeftLeafRightSubtreeOnly_thenReturns0() {
+    TreeNode root = new TreeNode(3);
+    root.right = new TreeNode(4);
+    Assert.assertEquals(0, sumOfLeftLeaves(root));
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifNoLeftLeafLeftSubstreeOnly_thenReturns0() {
+    TreeNode root = new TreeNode(3);
+    root.left = new TreeNode(1);
+    root.left.right = new TreeNode(2);
+    Assert.assertEquals(0, sumOfLeftLeaves(root));
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifLeftLeavesOnlyInRightSubtree_thenReturnsCorrectSum() {
+    TreeNode root = new TreeNode(3);
+    root.right = new TreeNode(5);
+    root.right.left = new TreeNode(4);
+    root.right.right = new TreeNode(7);
+    root.right.right.left = new TreeNode(6);
+    Assert.assertEquals(10, sumOfLeftLeaves(root));
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifLeftLeavesOnlyInLeftSubtree_thenReturnsCorrectSum() {
+    TreeNode root = new TreeNode(8);
+    root.left = new TreeNode(5);
+    root.left.left = new TreeNode(4);
+    root.left.right = new TreeNode(7);
+    root.left.right.left = new TreeNode(6);
+    Assert.assertEquals(10, sumOfLeftLeaves(root));
+  }
+
+  @Test
+  public void sumOfLeftLeaves_ifLeftLeavesInBothLeftAndRightSubtrees_thenReturnsCorrectSum() {
+    TreeNode root = new TreeNode(5);
+    root.left = new TreeNode(3);
+    root.right = new TreeNode(7);
+    root.left.left = new TreeNode(2);
+    root.right.left = new TreeNode(6);
+    root.right.right = new TreeNode(9);
+    root.right.right.left = new TreeNode(8);
+    Assert.assertEquals(16, sumOfLeftLeaves(root));
+  }
+}
+
+class TreeNode {
+  int val;
+  TreeNode left;
+  TreeNode right;
+  TreeNode(int x) { val = x; }
+}

@@ -1,0 +1,48 @@
+import org.junit.*;
+import org.junit.runner.*;
+
+/*
+
+Calculate the sum of two integers a and b,
+but you are not allowed to use the operator + and -.
+
+Example:
+Given a = 1 and b = 2, return 3.
+
+*/
+
+public class Solution {
+  public static void main(String[] args) {
+    JUnitCore.main("Solution");
+  }
+
+  public int getSum(int a, int b) {
+    while (b != 0) {
+      int c = a ^ b;
+      int d = (a & b) << 1;
+      a = c;
+      b = d;
+    }
+    return a;
+  }
+
+  @Test
+  public void getSum_if2Plus3_thenReturns5() {
+    Assert.assertEquals(5, getSum(2, 3));
+  }
+
+  @Test
+  public void getSum_if0Plus3_thenReturns3() {
+    Assert.assertEquals(3, getSum(0, 3));
+  }
+
+  @Test
+  public void getSum_if2Plus0_thenReturns2() {
+    Assert.assertEquals(2, getSum(2, 0));
+  }
+
+  @Test
+  public void getSum_ifNegative1Plus1_thenReturns0() {
+    Assert.assertEquals(0, getSum(-1, 1));
+  }
+}
